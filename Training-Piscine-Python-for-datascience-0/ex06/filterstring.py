@@ -1,4 +1,6 @@
 import sys
+import ft_filter
+
 
 def pError(error):
     """
@@ -12,17 +14,19 @@ def pError(error):
     print(f"AssertionError: {error}")
     exit()
 
+
 def main(argv):
     if len(argv) != 2:
         pError("the arguments are bad.")
-    
+
     try:
-        s = str(argv[0]).split()
+        my_list = str(argv[0]).split()
         nbr = int(argv[1])
-        cmp = lambda x: True if len(x) > nbr else False
-        list = [item for item in s if cmp(item)]
+        # cmp = lambda x: True if len(x) > nbr else False
+        filtered = ft_filter(lambda x: len(x) > nbr, my_list)
+        list = [item for item in my_list if filtered(item)]
         print(list)
-    except:
+    except ValueError:
         pError("the arguments are bad.")
 
 

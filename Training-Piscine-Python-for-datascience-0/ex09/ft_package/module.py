@@ -4,10 +4,11 @@ def add_one(number):
 
     return number + 1
 
+
 def count_in_list(lst, word):
     """count(value, /) method of builtins.list instance
     Return number of occurrences of value."""
-    
+
     return lst.count(word)
 
 # print(help(count_in_list))
