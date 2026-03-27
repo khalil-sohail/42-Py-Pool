@@ -1,1 +1,2 @@
-# ft_package \n A sample test package.
+# ft_package
+A sample test package.
