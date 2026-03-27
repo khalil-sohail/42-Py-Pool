@@ -1,3 +1,0 @@
-dist
-ft_package
-test

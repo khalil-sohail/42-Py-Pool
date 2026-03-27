@@ -1,5 +1,5 @@
 from time import sleep
-from tqdm import tqdm  # type: ignore
+from tqdm import tqdm
 from Loading import ft_tqdm
 
 for elem in ft_tqdm(range(333)):

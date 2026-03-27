@@ -1,1 +1,1 @@
-MEW
+# ft_package \n A sample test package.

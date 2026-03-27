@@ -1,5 +1,4 @@
 import sys
-import ft_filter
 
 
 def pError(error):
@@ -22,10 +21,8 @@ def main(argv):
     try:
         my_list = str(argv[0]).split()
         nbr = int(argv[1])
-        # cmp = lambda x: True if len(x) > nbr else False
-        filtered = ft_filter(lambda x: len(x) > nbr, my_list)
-        list = [item for item in my_list if filtered(item)]
-        print(list)
+        result = [item for item in my_list if (lambda x: len(x) > nbr)(item)]
+        print(result)
     except ValueError:
         pError("the arguments are bad.")
 
