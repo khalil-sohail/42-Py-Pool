@@ -1,13 +1,16 @@
 from math import sqrt
 
+
 def mean(lst):
     return sum(lst)/len(lst)
 
-def median(lst, l):
-    if (l % 2 != 0):
-        return lst[int(l / 2)]
+
+def median(lst, length):
+    if (length % 2 != 0):
+        return lst[int(length / 2)]
     else:
-        return sum(lst[(int(l / 2)) - 1:(int(l / 2)) + 1])/2
+        return sum(lst[(int(length / 2)) - 1:(int(length / 2)) + 1])/2
+
 
 def ft_statistics(*args: any, **kwargs: any) -> None:
     for k, val in kwargs.items():
@@ -18,19 +21,17 @@ def ft_statistics(*args: any, **kwargs: any) -> None:
             print(f"mean : {m}")
         elif val == "median":
             sorted_args = sorted(args)
-            l = int(len(sorted_args))
-            M = median(sorted_args, l)
+            length = int(len(sorted_args))
+            M = median(sorted_args, length)
             print(f"{val} : {M}")
         elif val == "quartile":
             quartile = [0, 0]
-            s1 = sorted_args[:int(l/2)]
-            s2 = sorted_args[int(l/2):]
+            s1 = sorted_args[:int(length/2)]
+            s2 = sorted_args[int(length/2):]
             quartile[0] = float(s1[int(len(s1)/2)])
-            quartile[1] = float(s2[int(len(s1)/2)])
+            quartile[1] = float(s2[int(len(s2)/2)])
             print(f"{val} : {quartile}")
-        
-        
-        
+
         elif val == "std":
             m = mean(args)
             std = 0
