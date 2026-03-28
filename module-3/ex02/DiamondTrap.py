@@ -1,5 +1,6 @@
 from S1E7 import Baratheon, Lannister
 
+
 class King(Baratheon, Lannister):
     """The King."""
 
@@ -18,8 +19,3 @@ class King(Baratheon, Lannister):
     def get_hairs(self):
         """get_hairs"""
         return self.hairs
-
-
-    def func(self):
-        return "Ours is the Fury"
-

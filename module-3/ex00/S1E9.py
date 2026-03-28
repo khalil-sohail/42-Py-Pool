@@ -1,32 +1,22 @@
 from abc import ABC, abstractmethod
 
+
 class Character(ABC):
-    """Your docstring for Class"""
-    
+    """An abstract base class representing a character in the Stark family."""
+
     def __init__(self, first_name, is_alive=True):
-        """Your docstring for Constructor"""
+        """Initialize a character in the Stark family."""
         self.first_name = first_name
         self.is_alive = is_alive
 
-    def die(self):
-        """Your docstring for Method"""
-        self.is_alive = False
-    
     @abstractmethod
-    def func():
+    def die(self):
+        """Mark the character as dead."""
         pass
 
+
 class Stark(Character):
-    """Your docstring for Class"""
-    def func():
-        print ("I'm Iron Man!")
-
-
-
-def main():
-    """Main"""
-
-
-
-if __name__ == '__main__':
-    main()
+    """A concrete class representing a member of the Stark family."""
+    def die(self):
+        """Mark the Stark character as dead."""
+        self.is_alive = False

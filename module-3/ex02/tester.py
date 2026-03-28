@@ -12,3 +12,5 @@ print(Joffrey.get_hairs())
 print(Joffrey.__dict__)
 print(Joffrey.__str__)
 print(Joffrey.__repr__)
+
+print(King.mro())

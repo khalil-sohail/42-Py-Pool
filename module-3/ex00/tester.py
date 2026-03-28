@@ -1,23 +1,39 @@
 from S1E9 import Character, Stark
 
-Ned = Stark("Ned")
 
-print(Ned.__dict__)
-print(Ned.is_alive)
+def main():
+    Ned = Stark("Ned")
+    print(f"Ned's dict: {Ned.__dict__}")
+    print(f"Is Ned alive? {Ned.is_alive}")
 
-Ned.die()
+    Ned.die()
+    print(f"Is Ned alive after die()? {Ned.is_alive}")
 
-print(Ned.is_alive)
-print(Ned.__doc__)
-print(Ned.__init__.__doc__)
-print(Ned.die.__doc__)
-print("---")
+    Lyanna = Stark("Lyanna", False)
+    print(f"Lyanna's dict: {Lyanna.__dict__}")
 
-Lyanna = Stark("Lyanna", False)
+    print(f"Stark class doc: {Stark.__doc__}")
+    print(f"Stark __init__ doc: {Stark.__init__.__doc__}")
+    print(f"Stark die() doc: {Stark.die.__doc__}")
 
-print(Lyanna.__dict__)
+    try:
+        hodor = Character("hodor")
+        print(
+            "FAIL: Successfully instantiated Character! It must be abstract.",
+            hodor
+        )
+    except TypeError as e:
+        print(f"PASS: Prevented Character instantiation -> {e}")
+    except Exception as e:
+        print(
+            "FAIL: Caught the wrong error! Expected TypeError,",
+            f"got {type(e).__name__}",
+            sep=" "
+        )
 
-try:
-    hodor = Character("hodor")
-except:
-    print("An exception occurred")
+    print(f"Is Stark a subclass of Character? {issubclass(Stark, Character)}")
+    print(f"Is Ned an instance of Character? {isinstance(Ned, Character)}")
+
+
+if __name__ == "__main__":
+    main()
