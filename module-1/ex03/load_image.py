@@ -24,7 +24,11 @@ def ft_load(path: str) -> np.array:
             img = img.convert('RGB')
 
         arr = np.array(img)
-        print(f'The shape of image is: {arr.shape}')
+        print(
+            f'The shape of image is: {arr.shape}',
+            arr,
+            sep='\n'
+        )
         return arr
 
     except FileNotFoundError:

@@ -23,8 +23,11 @@ def zoom_image(image, start_x=450, start_y=100, size=400):
         if len(zoomed.shape) == 3:
             zoomed = np.mean(zoomed, axis=2, keepdims=True).astype(np.uint8)
 
-        print(f"New shape after slicing: {zoomed.shape}")
-        print(zoomed)
+        print(
+            f"New shape after slicing: {zoomed.shape}",
+            zoomed,
+            sep='\n'
+        )
         return zoomed
 
     except Exception as e:
@@ -34,10 +37,8 @@ def zoom_image(image, start_x=450, start_y=100, size=400):
 
 def main():
     image = ft_load("animal.jpeg")
-    # image = ft_load("landscape.jpg")
     if image is not None:
         zoomed_image = zoom_image(image)
-        # zoomed_image = zoom_image(image, start_x=150, start_y=50, size=150)
         if zoomed_image is not None:
             display_with_axes(zoomed_image)
 
